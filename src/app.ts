@@ -20,12 +20,18 @@ app.use(cors({ origin: true, credentials: true }));
 
 // Init Middleware
 
+if (process.env.NODE_ENV !== 'production') {
+    require('dotenv').config();
+}
+
+const port = process.env.WEB_PORT || 8082;
+
 app.get('/', (req, res) => res.send('Hello world!'));
-app.get('/books', (req, res) => res.send('Hello books!'));
+app.get('/books', (req, res) => res.send(`Hello books!=${port}`));
 
 // use Routes
 app.use('/api/books', books);
 
-const port = process.env.PORT || 8082;
 
+console.log( 'Port number', port )
 app.listen(port, () => console.log(`Server running on port ${port}`));
