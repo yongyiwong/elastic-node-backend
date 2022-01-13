@@ -1,0 +1,50 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/app.ts",
+  "scripts": {
+    "lint": "eslint . --ext js,ts --cache --fix",
+    "prettier": "prettier --list-different './**/*.{js,ts}'",
+    "typecheck": "tsc --noEmit",
+    "build": "tsc",
+    "prestart": "yarn build",
+    "start": "node dist/index.js",
+    "dev": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/app.ts",
+    "env:up": "docker-compose up --build -d mongodb",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yongyiwong/backend.git"
+  },
+  "author": "Yong Yi Wong",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yongyiwong/backend/issues"
+  },
+  "homepage": "https://github.com/yongyiwong/backend#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "config": "^3.1.0",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.5.15",
+    "validation": "0.0.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/node": "^14.14.25",
+    "@typescript-eslint/eslint-plugin": "^4.29.1",
+    "@typescript-eslint/parser": "^4.29.1",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "nodemon": "^1.19.1",
+    "prettier": "^2.3.2",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.3.5"
+  }
+}
