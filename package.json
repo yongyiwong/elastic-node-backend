@@ -6,8 +6,8 @@
   "scripts": {
     "lint": "eslint . --ext js,ts --cache --fix",
     "prettier": "prettier --list-different './**/*.{js,ts}'",
-    "typecheck": "tsc --noEmit",
-    "build": "tsc",
+    "typecheck": "npx tsc --noEmit",
+    "build": "npx tsc",
     "prestart": "npm run build",
     "start": "node dist/index.js",
     "dev": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/app.ts",
