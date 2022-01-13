@@ -20,10 +20,11 @@ if (process.env.NODE_ENV !== 'production') {
     require('dotenv').config();
 }
 const port = process.env.WEB_PORT || 8082;
+const MONGODB_URI = process.env.MONGODB_URI;
 app.get('/', (req, res) => res.send('Hello world!'));
-app.get('/books', (req, res) => res.send(`Hello books!=${port}`));
+app.get('/books', (req, res) => res.send(`Hello books!=${MONGODB_URI}`));
 // use Routes
 app.use('/api/books', books);
 console.log('Port number', port);
-app.listen(port, () => console.log(`Server running on port ${port}`));
+app.listen(port, () => console.log(`Server running on port ${MONGODB_URI}`));
 //# sourceMappingURL=app.js.map
