@@ -6,11 +6,11 @@
   "scripts": {
     "lint": "eslint . --ext js,ts --cache --fix",
     "prettier": "prettier --list-different './**/*.{js,ts}'",
-    "typecheck": "npx tsc --noEmit",
-    "build": "npx tsc",
+    "typecheck": "tsc --noEmit",
+    "build": "tsc",
     "prestart": "npm run build",
     "dev": "node dist/app.js",
-    "start": "npx nodemon --watch 'src/**/*.ts' --exec 'npx ts-node' src/app.ts",
+    "start": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/app.ts",
     "env:up": "docker-compose up --build -d mongodb",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
