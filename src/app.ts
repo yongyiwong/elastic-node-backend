@@ -20,13 +20,13 @@ app.use(cors({ origin: true, credentials: true }));
 
 // Init Middleware
 
-if (process.env.NODE_ENV !== 'production') {
-    require('dotenv').config();
-}
+// if (process.env.NODE_ENV !== 'production') {
+//     require('dotenv').config();
+// }
 
 const port = process.env.WEB_PORT || 8082;
 
-const MONGODB_URI = process.env.MONGODB_URI
+const MONGODB_URI = process.env.MONGODB_URI || 'MongoDB'
 
 app.get('/', (req, res) => res.send('Hello world!'));
 app.get('/books', (req, res) => res.send(`Hello books!=${MONGODB_URI}`));
